@@ -2,12 +2,18 @@
 @import "mixins";
 @import "reboot";
 
+$header-margin-left-right: 20px;
+$font-color-one: blue;
+
 .header {
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: $border-radius-base solid $border-color;
+  border-bottom: 2px solid $border-color;
+  &-operations {
+    margin-right: $header-margin-left-right;
+  }
 }
 
 .main {
@@ -18,4 +24,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: $white;
+  margin-left: $header-margin-left-right;
+}
+
+.button {
+  padding: 5px 40px;
+  border-radius: 25px;
+  border: 0;
+}
+
+.register-button {
+  @extend .button;
+  background-color: $primary-color;
+  color: white;
+}
+
+.login-button {
+  @extend .button;
+  background-color: $body-bg;
+  color: $font-color-one;
+  border: 1px solid $font-color-one;
 }
